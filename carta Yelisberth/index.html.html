@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para Yelisberth ❤️</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #ffc0cb;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 2em;
+      color: white;
+      text-shadow: 1px 1px 4px #000;
+      z-index: 2;
+    }
+
+    video {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90%;
+      height: auto;
+      border: 3px solid white;
+      border-radius: 12px;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 2em;
+      opacity: 0.7;
+      animation: float 6s linear infinite;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Para Yelisberth ❤️</h1>
+
+  <video controls autoplay loop muted>
+    <source src="video.mp4" type="video/mp4" />
+    Tu navegador no soporta el video.
+  </video>
+
+  <script>
+    const totalHearts = 30;
+    for (let i = 0; i < totalHearts; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = 1 + Math.random() * 2 + "em";
+      heart.style.animationDuration = 4 + Math.random() * 5 + "s";
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
